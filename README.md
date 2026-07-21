@@ -4,6 +4,14 @@
 
 # omniastro
 
+> **Disclaimer:** This is a solo, spare-time fork maintained with the heavy
+> assistance of [Claude Code](https://claude.com/claude-code). I don't have
+> the time to maintain this manually the way a project like this deserves,
+> so expect AI-assisted changes, and review/test anything before relying on
+> it in production. The long-term aim is to grow this into a toolkit for
+> physically accurate worldbuilding (custom planets, atmospheres, orbits,
+> etc.), beyond poliastro's original Solar System scope.
+
 `omniastro` is an active fork of [poliastro](https://github.com/poliastro/poliastro), a pure
 Python library for interactive Astrodynamics and Orbital Mechanics. poliastro was
 [archived by its original maintainers in 2023](https://github.com/poliastro/poliastro/issues/1640);
@@ -62,6 +70,34 @@ The Python package itself has been renamed from `poliastro` to `omniastro`:
 from omniastro.bodies import Earth
 from omniastro.twobody import Orbit
 ```
+
+### Custom atmospheres
+
+Besides the built-in Earth atmosphere models (`omniastro.earth.atmosphere`),
+`omniastro.atmosphere` lets you build a physically consistent atmosphere for
+any world from its gas composition, surface conditions, and a temperature
+lapse-rate profile — useful for worldbuilding:
+
+```python
+from astropy import units as u
+from omniastro.atmosphere import AtmosphereComposition, CustomAtmosphere
+
+co2_atmo = AtmosphereComposition({"CO2": 0.965, "N2": 0.035})
+venus_like = CustomAtmosphere(
+    composition=co2_atmo,
+    layers=[(0 * u.km, -8.0 * u.K / u.km)],
+    surface_temperature=737 * u.K,
+    surface_pressure=9.2e6 * u.Pa,
+    radius=6051.8 * u.km,
+    surface_gravity=8.87 * u.m / u.s**2,
+)
+venus_like.density(0 * u.km)  # <Quantity 65.23... kg / m3>
+```
+
+`temperature`, `pressure`, `density`, `sound_speed` and `properties` work at
+any altitude within the defined layers, and an `attractor=` (a
+`~omniastro.bodies.Body`) can be passed instead of explicit `radius`/
+`surface_gravity`.
 
 ## Documentation
 
