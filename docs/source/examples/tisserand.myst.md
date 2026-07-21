@@ -55,9 +55,9 @@ from astropy import units as u
 from matplotlib import pyplot as plt
 import numpy as np
 
-from poliastro.bodies import Venus, Earth, Mars
-from poliastro.plotting.tisserand import TisserandPlotter, TisserandKind
-from poliastro.plotting.util import BODY_COLORS
+from omniastro.bodies import Venus, Earth, Mars
+from omniastro.plotting.tisserand import TisserandPlotter, TisserandKind
+from omniastro.plotting.util import BODY_COLORS
 ```
 
 Notice that we imported the `TisserandKind` class, which will help us to indicate the kind of Tisserand plot we want to generate:
@@ -115,7 +115,7 @@ More complex tisserand graphs can be developed, for example for the whole Solar 
 
 ```{code-cell}
 # Let us import the rest of the planets
-from poliastro.bodies import Mercury, Jupiter, Saturn, Uranus, Neptune
+from omniastro.bodies import Mercury, Jupiter, Saturn, Uranus, Neptune
 
 SS_BODIES_INNER = [
     Mercury,

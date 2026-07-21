@@ -3,8 +3,8 @@ from math import cos, pi, sin
 from astropy import units as u
 from astropy.tests.helper import assert_quantity_allclose
 
-from poliastro.bodies import Earth, Moon
-from poliastro.threebody.restricted import lagrange_points_vec
+from omniastro.bodies import Earth, Moon
+from omniastro.threebody.restricted import lagrange_points_vec
 
 
 def test_lagrange_points_vec():

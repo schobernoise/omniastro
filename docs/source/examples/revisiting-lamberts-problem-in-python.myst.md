@@ -21,8 +21,8 @@ from cycler import cycler
 from matplotlib import pyplot as plt
 import numpy as np
 
-from poliastro.core import iod
-from poliastro.iod import izzo
+from omniastro.core import iod
+from omniastro.iod import izzo
 ```
 
 ## Part 1: Reproducing the original figure
@@ -120,7 +120,7 @@ fig
 ```{code-cell}
 from astropy import units as u
 
-from poliastro.bodies import Earth
+from omniastro.bodies import Earth
 ```
 
 ### Single revolution

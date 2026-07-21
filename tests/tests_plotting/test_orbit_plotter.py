@@ -6,21 +6,21 @@ from astropy.time import Time
 from matplotlib import pyplot as plt
 import pytest
 
-from poliastro.bodies import Earth, Jupiter, Mars, Sun
-from poliastro.constants import J2000_TDB
-from poliastro.ephem import Ephem
-from poliastro.examples import churi, iss, molniya
-from poliastro.frames import Planes
-from poliastro.maneuver import Maneuver
-from poliastro.plotting import OrbitPlotter
-from poliastro.plotting.orbit.backends import (
+from omniastro.bodies import Earth, Jupiter, Mars, Sun
+from omniastro.constants import J2000_TDB
+from omniastro.ephem import Ephem
+from omniastro.examples import churi, iss, molniya
+from omniastro.frames import Planes
+from omniastro.maneuver import Maneuver
+from omniastro.plotting import OrbitPlotter
+from omniastro.plotting.orbit.backends import (
     DEFAULT_ORBIT_PLOTTER_BACKENDS,
     DEFAULT_ORBIT_PLOTTER_BACKENDS_2D,
     DEFAULT_ORBIT_PLOTTER_BACKENDS_3D,
     Matplotlib2D,
 )
-from poliastro.twobody import Orbit
-from poliastro.util import time_range
+from omniastro.twobody import Orbit
+from omniastro.util import time_range
 
 # @pytest.mark.parametrize("backend", SUPPORTED_ORBIT_PLOTTER_BACKENDS)
 # def test_get_figure_has_expected_properties(backend):
@@ -391,7 +391,7 @@ def test_plot_ephem_no_epoch():
 def test_body_frame_raises_warning_if_time_is_not_tdb_with_proper_time(
     recwarn,
 ):
-    from poliastro.warnings import TimeScaleWarning
+    from omniastro.warnings import TimeScaleWarning
 
     body = Jupiter
     epoch = Time("2017-09-29 07:31:26", scale="utc")

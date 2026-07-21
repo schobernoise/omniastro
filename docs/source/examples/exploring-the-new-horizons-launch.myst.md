@@ -19,15 +19,15 @@ Main data source: Guo & Farquhar "New Horizons Mission Design" http://www.boulde
 from astropy import time
 from astropy import units as u
 
-from poliastro import iod
+from omniastro import iod
 
-from poliastro.bodies import Sun, Earth, Jupiter
-from poliastro.ephem import Ephem
-from poliastro.frames import Planes
-from poliastro.plotting import OrbitPlotter
-from poliastro.plotting.orbit.backends import Matplotlib2D
-from poliastro.twobody import Orbit
-from poliastro.util import norm
+from omniastro.bodies import Sun, Earth, Jupiter
+from omniastro.ephem import Ephem
+from omniastro.frames import Planes
+from omniastro.plotting import OrbitPlotter
+from omniastro.plotting.orbit.backends import Matplotlib2D
+from omniastro.twobody import Orbit
+from omniastro.util import norm
 ```
 
 ## Parking orbit

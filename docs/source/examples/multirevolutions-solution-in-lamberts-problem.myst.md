@@ -106,10 +106,10 @@ Now, let us present how to use poliastro to solve for the multiple revolutions s
 from astropy import units as u
 from astropy.time import Time
 
-from poliastro.bodies import Sun, Earth, Mars
-from poliastro.ephem import Ephem
-from poliastro.twobody import Orbit
-from poliastro.util import time_range
+from omniastro.bodies import Sun, Earth, Mars
+from omniastro.ephem import Ephem
+from omniastro.twobody import Orbit
+from omniastro.util import time_range
 ```
 
 Computing the initial and final position orbits for each planet:
@@ -148,7 +148,7 @@ colors_and_styles = [
 We now define a function for solving all the possible solutions
 
 ```{code-cell} ipython3
-from poliastro.maneuver import Maneuver
+from omniastro.maneuver import Maneuver
 
 
 def lambert_solution_orbits(orb_departure, orb_arrival, M):
@@ -170,8 +170,8 @@ Finally, we can plot all the different scenarios from $M=0$ up to $M=2$ revoluti
 ```{code-cell} ipython3
 from matplotlib import pyplot as plt
 
-from poliastro.plotting import OrbitPlotter
-from poliastro.plotting.orbit.backends import Matplotlib2D
+from omniastro.plotting import OrbitPlotter
+from omniastro.plotting.orbit.backends import Matplotlib2D
 ```
 
 ```{code-cell} ipython3

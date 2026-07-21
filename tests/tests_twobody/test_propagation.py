@@ -7,14 +7,14 @@ from numpy.testing import assert_allclose
 import pytest
 from pytest import approx
 
-from poliastro.bodies import Earth, Moon, Sun
-from poliastro.constants import J2000
-from poliastro.core.elements import rv2coe
-from poliastro.core.propagation import func_twobody
-from poliastro.examples import iss
-from poliastro.frames import Planes
-from poliastro.twobody import Orbit
-from poliastro.twobody.propagation import (
+from omniastro.bodies import Earth, Moon, Sun
+from omniastro.constants import J2000
+from omniastro.core.elements import rv2coe
+from omniastro.core.propagation import func_twobody
+from omniastro.examples import iss
+from omniastro.frames import Planes
+from omniastro.twobody import Orbit
+from omniastro.twobody.propagation import (
     ALL_PROPAGATORS,
     ELLIPTIC_PROPAGATORS,
     HYPERBOLIC_PROPAGATORS,
@@ -27,7 +27,7 @@ from poliastro.twobody.propagation import (
     RecseriesPropagator,
     ValladoPropagator,
 )
-from poliastro.util import norm
+from omniastro.util import norm
 
 
 @pytest.fixture(scope="module")

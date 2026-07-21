@@ -6,8 +6,8 @@ from hypothesis import example, given, settings, strategies as st
 import numpy as np
 import pytest
 
-from poliastro.examples import iss
-from poliastro.twobody.sampling import TrueAnomalyBounds, sample_closed
+from omniastro.examples import iss
+from omniastro.twobody.sampling import TrueAnomalyBounds, sample_closed
 
 angles = partial(st.floats, min_value=-2 * np.pi, max_value=2 * np.pi)
 eccentricities = partial(st.floats, min_value=0, max_value=1, exclude_max=True)

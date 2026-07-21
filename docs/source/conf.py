@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# poliastro documentation build configuration file.
+# omniastro documentation build configuration file.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -32,7 +32,7 @@ extensions = [
 ]
 
 # GitHub role config
-github_default_org_project = ("poliastro", "poliastro")
+github_default_org_project = ("schobernoise", "omniastro")
 
 # MathJax config
 # See https://github.com/spatialaudio/nbsphinx/issues/572#issuecomment-853389268
@@ -51,8 +51,8 @@ myst_enable_extensions = [
     "substitution",
 ]
 myst_substitutions = {
-    "Ephem": "{py:class}`~poliastro.ephem.Ephem`",
-    "Orbit": "{py:class}`~poliastro.twobody.orbit.scalar.Orbit`",
+    "Ephem": "{py:class}`~omniastro.ephem.Ephem`",
+    "Orbit": "{py:class}`~omniastro.twobody.orbit.scalar.Orbit`",
 }
 
 # Hoverxref Extension
@@ -84,8 +84,11 @@ source_suffix = {
     ".md": "markdown",
 }
 
-project = "poliastro"
-copyright = "2013, Juan Luis Cano Rodríguez and the poliastro development team"
+project = "omniastro"
+copyright = (
+    "2013-2023, Juan Luis Cano Rodríguez and the poliastro development team; "
+    "2026, Fabian Schober and omniastro contributors"
+)
 
 project_ver = version(project)
 version = ".".join(project_ver.split(".")[:2])
@@ -110,7 +113,7 @@ intersphinx_mapping = {
 # Warning suppresses
 suppress_warnings = ["image.nonlocal_uri"]
 
-if os.environ.get("POLIASTRO_SKIP_NOTEBOOKS") == "True":
+if os.environ.get("OMNIASTRO_SKIP_NOTEBOOKS") == "True":
     nbsphinx_execute = "never"
     suppress_warnings.append("nbsphinx.thumbnail")
 else:
@@ -128,11 +131,11 @@ html_context = {
         ),
         (
             '<i class="fa fa-github fa-fw"></i> Source code',
-            "https://github.com/poliastro/poliastro",
+            "https://github.com/schobernoise/omniastro",
         ),
         (
             '<i class="fa fa-bug fa-fw"></i> Issue tracker',
-            "https://github.com/poliastro/poliastro/issues",
+            "https://github.com/schobernoise/omniastro/issues",
         ),
         (
             '<i class="fa fa-envelope fa-fw"></i> Mailing list',
@@ -186,7 +189,7 @@ autoapi_ignore = [
     "*_compat*",  # To avoid WARNING: more than one target found for cross-reference '__class__'
 ]
 
-exclude_patterns.extend(["autoapi/index.rst", "autoapi/poliastro/index.rst"])
+exclude_patterns.extend(["autoapi/index.rst", "autoapi/omniastro/index.rst"])
 
 # Ignore sphinx-autoapi warnings on reimported objects
 # See https://github.com/readthedocs/sphinx-autoapi/issues/285

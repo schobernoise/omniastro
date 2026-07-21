@@ -17,7 +17,7 @@ import numpy as np
 from numpy.testing import assert_allclose, assert_array_equal
 import pytest
 
-from poliastro.bodies import (
+from omniastro.bodies import (
     Body,
     Earth,
     Jupiter,
@@ -30,12 +30,12 @@ from poliastro.bodies import (
     Uranus,
     Venus,
 )
-from poliastro.constants import J2000, J2000_TDB
-from poliastro.ephem import Ephem
-from poliastro.examples import iss
-from poliastro.frames.ecliptic import HeliocentricEclipticJ2000
-from poliastro.frames.enums import Planes
-from poliastro.frames.equatorial import (
+from omniastro.constants import J2000, J2000_TDB
+from omniastro.ephem import Ephem
+from omniastro.examples import iss
+from omniastro.frames.ecliptic import HeliocentricEclipticJ2000
+from omniastro.frames.enums import Planes
+from omniastro.frames.equatorial import (
     GCRS,
     HCRS,
     JupiterICRS,
@@ -46,12 +46,12 @@ from poliastro.frames.equatorial import (
     UranusICRS,
     VenusICRS,
 )
-from poliastro.frames.util import get_frame
-from poliastro.plotting.orbit.backends import DEFAULT_ORBIT_PLOTTER_BACKENDS
-from poliastro.twobody.angles import E_to_M, nu_to_E
-from poliastro.twobody.orbit import Orbit
-from poliastro.twobody.sampling import TrueAnomalyBounds
-from poliastro.warnings import PatchedConicsWarning
+from omniastro.frames.util import get_frame
+from omniastro.plotting.orbit.backends import DEFAULT_ORBIT_PLOTTER_BACKENDS
+from omniastro.twobody.angles import E_to_M, nu_to_E
+from omniastro.twobody.orbit import Orbit
+from omniastro.twobody.sampling import TrueAnomalyBounds
+from omniastro.warnings import PatchedConicsWarning
 
 
 @pytest.fixture()

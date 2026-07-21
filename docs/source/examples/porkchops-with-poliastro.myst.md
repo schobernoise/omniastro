@@ -19,19 +19,19 @@ Porkchops are also known as mission design curves since they show different para
 * Launch energy (C3L)
 * Arrival velocity (VHP)
 
-For the moment, poliastro is only capable of creating these mission plots between `poliastro.bodies` objects. However, it is intended for future versions to make it able for plotting porkchops between NEOs also.
+For the moment, poliastro is only capable of creating these mission plots between `omniastro.bodies` objects. However, it is intended for future versions to make it able for plotting porkchops between NEOs also.
 
 +++
 
 ## Basic modules
-For creating a porkchop plot with poliastro, we need to import the `porkchop` function from the `poliastro.plotting.porkchop` module. Also, two `poliastro.bodies` are necessary for computing the targetting problem associated. Finally by making use of `time_range`, a very useful function available at `poliastro.utils` it is possible to define a span of launching and arrival dates for the problem:
+For creating a porkchop plot with poliastro, we need to import the `porkchop` function from the `omniastro.plotting.porkchop` module. Also, two `omniastro.bodies` are necessary for computing the targetting problem associated. Finally by making use of `time_range`, a very useful function available at `poliastro.utils` it is possible to define a span of launching and arrival dates for the problem:
 
 ```{code-cell}
 from astropy import units as u
 
-from poliastro.bodies import Earth, Mars
-from poliastro.plotting.porkchop import PorkchopPlotter
-from poliastro.util import time_range
+from omniastro.bodies import Earth, Mars
+from omniastro.plotting.porkchop import PorkchopPlotter
+from omniastro.util import time_range
 
 launch_span = time_range("2005-04-30", end="2005-10-07")
 arrival_span = time_range("2005-11-16", end="2006-12-21")

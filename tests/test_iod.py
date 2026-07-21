@@ -2,9 +2,9 @@ from astropy import constants as c, units as u
 from astropy.tests.helper import assert_quantity_allclose
 import pytest
 
-from poliastro.bodies import Earth
-from poliastro.core import iod
-from poliastro.iod import izzo, vallado
+from omniastro.bodies import Earth
+from omniastro.core import iod
+from omniastro.iod import izzo, vallado
 
 
 @pytest.mark.parametrize("lambert", [vallado.lambert, izzo.lambert])

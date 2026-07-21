@@ -54,11 +54,21 @@ python -m pip install -e ".[test]"
 ```
 
 
+## Usage
+
+The Python package itself has been renamed from `poliastro` to `omniastro`:
+
+```python
+from omniastro.bodies import Earth
+from omniastro.twobody import Orbit
+```
+
 ## Documentation
 
 The original poliastro documentation (quickstart guide, API reference,
 examples gallery) is still a good starting point for understanding the
-library's API, since the core has not diverged yet:
+library's API — everywhere it writes `poliastro.foo`, read `omniastro.foo`,
+since the core has not otherwise diverged yet:
 
 * [poliastro stable documentation](https://docs.poliastro.space/en/stable/)
 * [poliastro examples gallery](https://docs.poliastro.space/en/latest/gallery.html)

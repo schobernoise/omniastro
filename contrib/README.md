@@ -1,7 +1,7 @@
 # Community contributions
 
 The `contrib` directory contains community contributions
-that are not yet ready to be part of the poliastro API,
+that are not yet ready to be part of the omniastro API,
 but are nonetheless useful for Astrodynamics Python users.
 
 If you have a small script or set of them
@@ -40,6 +40,6 @@ Note that:
   so either they should be pure Python
   or be written in a compiled language with a Python wrapper.
 - All contributions will be permissively licensed with the MIT license,
-  the one that poliastro uses.
+  the one that omniastro uses.
   If you don't agree with this,
   we ask you to find a different place to share your contribution.

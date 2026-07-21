@@ -37,7 +37,7 @@ from astropy import units as u
 from matplotlib import pyplot as plt
 import numpy as np
 
-from poliastro.earth.atmosphere import COESA62, COESA76
+from omniastro.earth.atmosphere import COESA62, COESA76
 ```
 
 ## Comparing coesa62 and coesa76

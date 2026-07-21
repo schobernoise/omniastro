@@ -4,7 +4,7 @@ jobs:
   quality: &test-template
     description: Code style
     docker:
-      - image: python:3.8
+      - image: python:3.12
     environment:
       PIP_PREFER_BINARY: true
       PIP_PROGRESS_BAR: "off"
@@ -14,91 +14,80 @@ jobs:
       - run: python -m pip install tox
       - run: tox
 
-  tests38-fast:
+  tests312-fast:
     <<: *test-template
-    description: Tests fast - Python 3.8
+    description: Tests fast - Python 3.12
     environment:
-      TOXENV: tests38-fast
+      TOXENV: tests312-fast
 
-  tests38-online:
+  tests312-online:
     <<: *test-template
-    description: Tests online - Python 3.8
+    description: Tests online - Python 3.12
     environment:
-      TOXENV: tests38-online
+      TOXENV: tests312-online
 
-  tests38-slow:
+  tests312-slow:
     <<: *test-template
-    description: Tests slow - Python 3.8
+    description: Tests slow - Python 3.12
     environment:
-      TOXENV: tests38-slow
+      TOXENV: tests312-slow
 
-  tests38-images:
+  tests312-images:
     <<: *test-template
-    description: Tests images - Python 3.8
+    description: Tests images - Python 3.12
     environment:
-      TOXENV: tests38-images
+      TOXENV: tests312-images
 
-  tests38-coverage:
+  tests312-coverage:
     <<: *test-template
-    description: Tests coverage - Python 3.8
+    description: Tests coverage - Python 3.12
     environment:
-      TOXENV: tests38-coverage
+      TOXENV: tests312-coverage
     steps:
       - checkout
       - run: python -m pip install tox
       - run: tox
       - run: python -m pip install codecov && codecov
 
-  tests39:
+  tests313:
     <<: *test-template
-    description: Tests - Python 3.9
+    description: Tests - Python 3.13
     docker:
-      - image: python:3.9
+      - image: python:3.13
     environment:
-      TOXENV: tests39
+      TOXENV: tests313
 
-  tests310:
+  tests314:
     <<: *test-template
-    description: Tests - Python 3.10
+    description: Tests - Python 3.14
     docker:
-      - image: python:3.10
+      - image: python:3.14
     environment:
-      TOXENV: tests310
-
-  tests311:
-    <<: *test-template
-    description: Tests - Python 3.11
-    docker:
-      - image: python:3.11
-    environment:
-      TOXENV: tests311
+      TOXENV: tests314
 
 workflows:
   version: 2
   build_and_test:
     jobs:
       - quality
-      - tests38-fast:
+      - tests312-fast:
           requires:
             - quality
-      - tests38-online:
+      - tests312-online:
           requires:
             - quality
-      - tests38-slow:
+      - tests312-slow:
           requires:
             - quality
-      - tests38-images:
+      - tests312-images:
           requires:
             - quality
-      - tests38-coverage:
+      - tests312-coverage:
           requires:
             - quality
-      - tests39:
+      - tests313:
           requires:
             - quality
-      - tests310:
-          requires:
-            - quality
-      - tests311:
+      - tests314:
           requires:
             - quality

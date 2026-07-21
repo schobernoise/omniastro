@@ -2,8 +2,8 @@ from astropy import units as u
 from astropy.tests.helper import assert_quantity_allclose
 import pytest
 
-from poliastro.bodies import Earth
-from poliastro.sensors import (
+from omniastro.bodies import Earth
+from omniastro.sensors import (
     ground_range_diff_at_azimuth,
     min_and_max_ground_range,
 )

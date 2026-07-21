@@ -203,7 +203,7 @@ import numpy as np
 
 from astropy.coordinates import CartesianRepresentation, CartesianDifferential
 
-from poliastro.util import time_range
+from omniastro.util import time_range
 ```
 
 ```{code-cell} ipython3
@@ -230,8 +230,8 @@ from warnings import warn
 
 from astropy.coordinates import TEME, GCRS
 
-from poliastro.ephem import Ephem
-from poliastro.frames import Planes
+from omniastro.ephem import Ephem
+from omniastro.frames import Planes
 
 
 def ephem_from_gp(sat, times):
@@ -271,9 +271,9 @@ iss_ephem
 And plot it!
 
 ```{code-cell} ipython3
-from poliastro.bodies import Earth
-from poliastro.plotting import OrbitPlotter
-from poliastro.plotting.orbit.backends import Plotly3D
+from omniastro.bodies import Earth
+from omniastro.plotting import OrbitPlotter
+from omniastro.plotting.orbit.backends import Plotly3D
 
 plotter = OrbitPlotter(backend=Plotly3D())
 plotter.set_attractor(Earth)

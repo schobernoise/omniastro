@@ -6,7 +6,7 @@ requires = [
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "poliastro"
+name = "omniastro"
 readme = "README.md"
 requires-python = ">=3.12"
 license = {file = "COPYING"}
@@ -66,7 +66,7 @@ UpstreamProject = "https://github.com/poliastro/poliastro"
 
 [project.optional-dependencies]
 jupyter = ["notebook>=7.0", "ipywidgets>=8.0"]
-cesium = ["czml3 >=0.5.3,<0.6"]
+cesium = ["czml3 >=3.3"]
 doc = [
     "httpx",
     "ipython>=8.0",
@@ -103,11 +103,10 @@ test = [
 
 [tool.flit.sdist]
 include = [
-    "src/poliastro/atmosphere/data/coesa62.dat",
-    "src/poliastro/atmosphere/data/coesa76.dat",
-    "src/poliastro/atmosphere/data/coesa76_p.dat",
-    "src/poliastro/atmosphere/data/coesa76_rho.dat",
-    "setup.cfg"
+    "src/omniastro/atmosphere/data/coesa62.dat",
+    "src/omniastro/atmosphere/data/coesa76.dat",
+    "src/omniastro/atmosphere/data/coesa76_p.dat",
+    "src/omniastro/atmosphere/data/coesa76_rho.dat",
 ]
 exclude = [
     "docs/"
@@ -139,7 +138,7 @@ exclude = [
 [tool.ruff.isort]
 combine-as-imports = true
 force-sort-within-sections = true
-known-first-party = ["poliastro"]
+known-first-party = ["omniastro"]
 
 [tool.ruff.mccabe]
 max-complexity = 18
@@ -163,13 +162,13 @@ show_missing = true
 [tool.importlinter]
 # Include Astropy to properly analyze external submodules,
 # see https://github.com/seddonym/import-linter/issues/111
-root_packages = ["poliastro", "astropy"]
+root_packages = ["omniastro", "astropy"]
 include_external_packages = true
 
 [[tool.importlinter.contracts]]
-name = "poliastro.core does not import astropy.units"
+name = "omniastro.core does not import astropy.units"
 type = "forbidden"
-source_modules = ["poliastro.core"]
+source_modules = ["omniastro.core"]
 forbidden_modules = ["astropy.units"]
 
 [tool.pytest.ini_options]

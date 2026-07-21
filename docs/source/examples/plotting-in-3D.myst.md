@@ -16,12 +16,12 @@ kernelspec:
 ```{code-cell} ipython3
 import numpy as np
 
-from poliastro.bodies import Earth, Sun
-from poliastro.constants import J2000
-from poliastro.examples import churi, iss, molniya
-from poliastro.plotting import OrbitPlotter
-from poliastro.plotting.orbit.backends import Plotly3D
-from poliastro.twobody import Orbit
+from omniastro.bodies import Earth, Sun
+from omniastro.constants import J2000
+from omniastro.examples import churi, iss, molniya
+from omniastro.plotting import OrbitPlotter
+from omniastro.plotting.orbit.backends import Plotly3D
+from omniastro.twobody import Orbit
 ```
 
 ```{code-cell} ipython3
@@ -56,8 +56,8 @@ frame.show()
 
 ```{code-cell} ipython3
 from astropy.time import Time
-from poliastro.ephem import Ephem
-from poliastro.util import time_range
+from omniastro.ephem import Ephem
+from omniastro.util import time_range
 ```
 
 ```{code-cell} ipython3

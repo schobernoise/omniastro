@@ -28,13 +28,13 @@ solar_system_ephemeris.set("jpl")
 
 import numpy as np
 
-from poliastro.bodies import Sun, Earth, Jupiter
-from poliastro.ephem import Ephem
-from poliastro.frames import Planes
-from poliastro.maneuver import Maneuver
-from poliastro.plotting import OrbitPlotter
-from poliastro.twobody import Orbit
-from poliastro.util import norm, time_range
+from omniastro.bodies import Sun, Earth, Jupiter
+from omniastro.ephem import Ephem
+from omniastro.frames import Planes
+from omniastro.maneuver import Maneuver
+from omniastro.plotting import OrbitPlotter
+from omniastro.twobody import Orbit
+from omniastro.util import norm, time_range
 ```
 
 All the data for Juno's mission is sorted [here](https://github.com/poliastro/poliastro/wiki/EuroPython:-Per-Python-ad-Astra). The main maneuvers that the spacecraft will perform are listed down:

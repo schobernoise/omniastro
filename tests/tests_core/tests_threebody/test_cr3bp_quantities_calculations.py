@@ -2,8 +2,8 @@ from astropy import units as u
 from astropy.tests.helper import assert_quantity_allclose
 import pytest
 
-from poliastro.bodies import Earth, Moon
-from poliastro.core.threebody.cr3bp_quantities_calculations import (
+from omniastro.bodies import Earth, Moon
+from omniastro.core.threebody.cr3bp_quantities_calculations import (
     calculate_mu,
     calculate_tstar,
 )

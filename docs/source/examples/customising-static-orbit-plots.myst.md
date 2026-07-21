@@ -24,11 +24,11 @@ from astropy.time import Time
 
 from matplotlib import pyplot as plt
 
-from poliastro.bodies import Earth, Mars, Jupiter, Sun
-from poliastro.frames import Planes
-from poliastro.plotting import OrbitPlotter
-from poliastro.plotting.orbit.backends import Matplotlib2D
-from poliastro.twobody import Orbit
+from omniastro.bodies import Earth, Mars, Jupiter, Sun
+from omniastro.frames import Planes
+from omniastro.plotting import OrbitPlotter
+from omniastro.plotting.orbit.backends import Matplotlib2D
+from omniastro.twobody import Orbit
 ```
 
 ```{code-cell} ipython3

@@ -39,15 +39,15 @@ from astropy import units as u
 
 import numpy as np
 
-from poliastro.bodies import Earth
-from poliastro.core.propagation import func_twobody
-from poliastro.examples import iss
-from poliastro.plotting import OrbitPlotter
-from poliastro.plotting.orbit.backends import Plotly3D
-from poliastro.twobody import Orbit
-from poliastro.twobody.propagation import CowellPropagator
-from poliastro.twobody.sampling import EpochsArray
-from poliastro.util import norm
+from omniastro.bodies import Earth
+from omniastro.core.propagation import func_twobody
+from omniastro.examples import iss
+from omniastro.plotting import OrbitPlotter
+from omniastro.plotting.orbit.backends import Plotly3D
+from omniastro.twobody import Orbit
+from omniastro.twobody.propagation import CowellPropagator
+from omniastro.twobody.sampling import EpochsArray
+from omniastro.util import norm
 ```
 
 To provide an acceleration depending on an extra parameter, we can use **closures** like this one:
