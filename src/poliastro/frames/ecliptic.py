@@ -11,11 +11,7 @@ from astropy.coordinates import (
     get_body,
 )
 from astropy.coordinates.builtin_frames.utils import DEFAULT_OBSTIME, get_jd12
-from astropy.coordinates.matrix_utilities import (
-    matrix_product,
-    matrix_transpose,
-    rotation_matrix,
-)
+from astropy.coordinates.matrix_utilities import rotation_matrix
 import erfa
 import numpy as np
 
@@ -73,14 +69,14 @@ def gcrs_to_geosolarecliptic(gcrs_coo, to_frame):
 
     rot_matrix = _make_rotation_matrix_from_reprs(sun_earth_detilt, x_axis)
 
-    return matrix_product(rot_matrix, _earth_detilt_matrix)
+    return rot_matrix @ _earth_detilt_matrix
 
 
 @frame_transform_graph.transform(
     DynamicMatrixTransform, GeocentricSolarEcliptic, GCRS
 )
 def geosolarecliptic_to_gcrs(from_coo, gcrs_frame):
-    return matrix_transpose(gcrs_to_geosolarecliptic(gcrs_frame, from_coo))
+    return gcrs_to_geosolarecliptic(gcrs_frame, from_coo).swapaxes(-2, -1)
 
 
 def _obliquity_rotation_value(equinox):

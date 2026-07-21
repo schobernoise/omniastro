@@ -4,6 +4,7 @@ from astropy import units as u
 from astropy.tests.helper import assert_quantity_allclose
 from astropy.time import Time
 import numpy as np
+from numpy.exceptions import VisibleDeprecationWarning
 from numpy.testing import assert_allclose
 import pytest
 
@@ -20,7 +21,7 @@ def test_maneuver_constructor_raises_error_if_invalid_delta_v():
         with warnings.catch_warnings():
             # Different length numpy arrays generate a deprecation warning.
             warnings.simplefilter(
-                "ignore", category=np.VisibleDeprecationWarning
+                "ignore", category=VisibleDeprecationWarning
             )
             Maneuver((0 * u.s, dv1), (2 * u.s, dv2))
     assert "Delta-V must be three dimensions vectors" in excinfo.exconly()
